@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prism"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "transformers>=4.44",
+    "torch>=2.2",
+    "gradio>=4.40",
+    "numpy",
+    "sentence-transformers",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/prism"]
